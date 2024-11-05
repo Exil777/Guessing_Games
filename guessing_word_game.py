@@ -24,10 +24,18 @@ for position in range(random_word_length):
     word_placeholder += "_"
 print(word_placeholder)
 # adding an underscore under each letter of the random word
+
+
 guess_letter = input("Guess a letter, until you the guess all the correct letters in the word ")
 # asking the user to guess a letter with the input function
 print(guess_letter)
 
 
+for letter in random_word:
+    if guess_letter == letter:
+        print("letter in word")
+    else:
+        print("letter not in word")
+# this for look is checking to see if letter the user pick is in the random word
 
 
