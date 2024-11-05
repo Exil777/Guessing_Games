@@ -16,8 +16,18 @@ random_word = random.choice(words_list)
 # generating a random word
 print(random_word)
 
+word_placeholder = ""
+# creating a empty string variable so i can add my underscore space as my random word placeholder
+random_word_length = len(random_word)
+# getting the length of my random word
+for position in range(random_word_length):
+    word_placeholder += "_"
+print(word_placeholder)
+# adding an underscore under each letter of the random word
 guess_letter = input("Guess a letter, until you the guess all the correct letters in the word ")
 # asking the user to guess a letter with the input function
 print(guess_letter)
+
+
 
 
