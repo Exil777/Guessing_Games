@@ -1,0 +1,16 @@
+1) Generate a random word in a list of words
+
+2) Create blank underscore space that is the same as the random word
+
+3) Ask the guess a letter in the random word that was generated 
+    3a) if the user guess the correct letter, the letter will replace one of the    underscore space
+        3ab) the user will be ask to guess a letter over and over until the correct word is guess and all the underscore space disappear, 
+        and the user will win the game
+    
+    3b) the user will have an amount of chances, 
+        if the user guess a wrong letter, the number of chances will decrease by 1 until she guess a correct letter before or she runs out chances before she guess the correct word.
+
+    3c) The user life do not start over if she guess one correct letter. 
+        use life stay the same if user guess a correct letter and life decrease each incorrect guesses
+    
+    
