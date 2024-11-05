@@ -25,17 +25,46 @@ for position in range(random_word_length):
 print(word_placeholder)
 # adding an underscore under each letter of the random word
 
+game_over = False
+correct_letters = []
+lives = 10
 
-guess_letter = input("Guess a letter, until you the guess all the correct letters in the word ")
-# asking the user to guess a letter with the input function
-print(guess_letter)
+while not game_over:
+# creating a while loop so that the user get ask to guess a letter over and over until correct letter is guess or game over
+    print(f"You have {lives} lives left")
+
+    guess_letter = input("Guess a letter, until you the guess all the correct letters in the word ").lower()
+    # asking the user to guess a letter with the input function
+    #print(guess_letter)
+
+    if guess_letter in correct_letters:
+        print(f"You've already guess: {guess_letter}")
+    
+    display = ""
+    
+    for letter in random_word:
+        if letter == guess_letter:
+            display += letter
+            correct_letters.append(guess_letter)
+        elif letter in correct_letters:
+            display += letter
+        else:
+            display += "_"
+    # this for look is checking to see if letter the user pick is in the random word
+    print(display)
 
 
-for letter in random_word:
-    if guess_letter == letter:
-        print("letter in word")
-    else:
-        print("letter not in word")
-# this for look is checking to see if letter the user pick is in the random word
+    if "_" not in display:
+        game_over = True
+        print("Congradulation, You win the game")  
+    # if the user guess all the correct letters and the "_" disappear, user win the game       
+
+    if guess_letter not in random_word:
+        lives -= 1
+        if lives == 0:
+            game_over = True
+            print("I'm sorry, You ran out of chances") 
+    # each time the user guess the wrong letter the user lose a life until the user runs out of lives   
+
 
 
